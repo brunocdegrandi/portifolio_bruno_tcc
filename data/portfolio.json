@@ -1,0 +1,26 @@
+{
+  "home": {
+    "title": "Olá, eu sou Seu Nome",
+    "subtitle": "Especialista em Suporte Técnico",
+    "profileImage": "assets/images/profile.png"
+  },
+  "about": {
+    "text": "Sou um profissional apaixonado por tecnologia com experiência em suporte técnico e consultoria."
+  },
+  "skills": [
+    {"name": "Suporte Técnico", "icon": "fas fa-headset"},
+    {"name": "Consultoria IT", "icon": "fas fa-laptop-code"},
+    {"name": "Resolução de Problemas", "icon": "fas fa-tools"}
+  ],
+  "trabalhos": [
+    {
+      "title": "Analista de Suporte - Empresa ABC",
+      "description": "Suporte técnico e atendimento ao cliente",
+      "image": "assets/images/trabalho1.jpg"
+    }
+  ],
+  "contact": {
+    "linkedin": "https://linkedin.com/in/seu-perfil",
+    "whatsapp": "https://wa.me/5511997503821"
+  }
+}

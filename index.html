@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <!-- Bootstrap CSS local -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+           <!-- <a class="navbar-brand" href="#">Home</a> --> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trabalhos">Trabalhos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Início -->
+<section id="home" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 home-content">
+                <h1 class="fw-bold">Olá, eu sou <span class="text-primary" id="home-name">Bruno Degrandi</span></h1>
+                <p class="lead mb-4" id="home-subtitle">Carregando...</p>
+                <a href="#trabalhos" class="btn btn-primary btn-lg">Ver Por onde Passei</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <div class="image-glow"></div>
+                    <img src="" alt="Foto de Perfil" class="profile-img" id="profile-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Sobre -->
+<section id="sobre" class="py-5">
+    <div class="container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <p id="about-text" class="text-center">Carregando...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="section-title">Minhas Habilidades</h2>
+            <div class="row" id="skills-container">
+                <!-- As habilidades serão carregadas dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Trabalhos -->
+    <section id="trabalhos" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Por Onde Passei</h2>
+            <div class="row" id="trabalhos-container">
+                <!-- Os trabalhos serão carregados dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+        <!-- Seção Contato -->
+    <section id="contato" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="text-center mb-4">
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <a href="#" id="linkedin-link" class="social-link" target="_blank">
+                                    <i class="fab fa-linkedin fa-10x"></i>
+                                </a>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" id="whatsapp-link" class="social-link" target="_blank">
+                                    <i class="fab fa-whatsapp fa-10x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <p class="lead">Podemos conversar pelo chat do Linkeding ou diretamente pelo meu Whatsapp!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p>&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS local -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="js/main.js"></script>
+</body>
+</html>

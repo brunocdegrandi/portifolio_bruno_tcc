@@ -1,0 +1,510 @@
+:root {
+    --primary-color: #1e3a8a; /* Azul marinho */
+    --secondary-color: #c0c0c0; /* Prata */
+    --dark-color: #0f172a; /* Preto azulado */
+    --light-color: #f8fafc;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--secondary-color) !important;
+}
+
+.nav-link {
+    color: var(--secondary-color) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Seções */
+section {
+    padding: 100px 0;
+}
+
+#home {
+    background: linear-gradient(135deg, var(--dark-color) 0%, #1e293b 100%);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+/* Imagem de perfil - ESTILO RETANGULAR GRANDE COMO REFERÊNCIA */
+.profile-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    object-position: center 25%; /* Foco no busto/rosto */
+    border-radius: 10px; /* Bordas levemente arredondadas */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(30, 58, 138, 0.2);
+}
+
+/* Preview no admin - também atualizar para retangular */
+.profile-preview {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center 25%;
+    border: 3px solid #1e3a8a;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste no layout da seção inicial para melhor espaçamento */
+#home .row {
+    min-height: 80vh;
+}
+
+/* Ajuste responsivo para mobile */
+@media (max-width: 768px) {
+    .profile-img {
+        max-width: 300px;
+        margin-top: 30px;
+    }
+    
+    #home .row {
+        min-height: auto;
+        padding: 50px 0;
+    }
+}
+
+/* Preview no admin */
+.profile-preview {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center 25%; /* Mesmo ajuste do preview */
+    border: 3px solid #1e3a8a;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards */
+.card {
+    background-color: #1e293b;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #152c6e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
+}
+
+/* Habilidades */
+.skill-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* TRABALHOS - substitui projetos */
+.trabalho-card {
+    overflow: hidden;
+}
+
+.trabalho-image {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.trabalho-card:hover .trabalho-image {
+    transform: scale(1.05);
+}
+
+/* Corrige a cor do texto nos cards de trabalhos */
+.trabalho-card .card-title {
+    color: var(--secondary-color) !important;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.trabalho-card .card-text {
+    color: var(--secondary-color) !important;
+    opacity: 0.9;
+}
+
+/* Corrige especificamente os textos dos trabalhos */
+#trabalhos-container .card-body {
+    color: var(--secondary-color) !important;
+}
+
+/* Contato */
+.social-link {
+    color: var(--secondary-color);
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: #0f172a;
+    border-top: 1px solid #1e293b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Container para a imagem com efeito sutil */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, transparent 50%);
+    border-radius: 15px;
+    z-index: -1;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.image-container:hover::before {
+    opacity: 0.5;
+    transform: translateY(-5px);
+}
+
+/* ========== SEÇÃO INÍCIO - LAYOUT EXATO COMO REFERÊNCIA ========== */
+#home {
+    background: linear-gradient(135deg, var(--dark-color) 0%, #1e293b 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#home .container {
+    position: relative;
+    z-index: 2;
+}
+
+#home .row {
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Conteúdo textual */
+.home-content {
+    padding-right: 3rem;
+}
+
+#home h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#home .text-primary {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#home .lead {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Container da imagem - LAYOUT GRANDE E TRANSPARENTE */
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Imagem de perfil - GRANDE, TRANSPARENTE E SEM CORTES */
+.profile-img {
+    width: auto;
+    max-width: 600px;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    transition: all 0.4s ease;
+    border-radius: 0;
+    background: transparent !important; /* FORÇA FUNDO TRANSPARENTE */
+}
+
+.profile-img:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 25px 50px rgba(30, 58, 138, 0.2));
+}
+
+/* Remove qualquer efeito que possa criar fundo */
+.image-container::before {
+    display: none; /* Remove o efeito anterior */
+}
+
+/* Efeito sutil de brilho atrás da imagem */
+.image-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(59, 130, 246, 0.15) 0%,
+        rgba(30, 58, 138, 0.1) 40%,
+        transparent 70%
+    );
+    z-index: -1;
+    animation: gentlePulse 8s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% { 
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Botão com destaque */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #2563eb);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(30, 58, 138, 0.4);
+    background: linear-gradient(135deg, #2563eb, var(--primary-color));
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 1200px) {
+    #home h1 {
+        font-size: 3rem;
+    }
+    
+    .profile-img {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    #home .row {
+        text-align: center;
+        min-height: auto;
+        padding: 100px 0 50px;
+    }
+    
+    .home-content {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+    
+    #home h1 {
+        font-size: 2.8rem;
+    }
+    
+    .profile-img {
+        max-width: 400px;
+        max-height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2.2rem;
+    }
+    
+    #home .lead {
+        font-size: 1.2rem;
+    }
+    
+    .profile-img {
+        max-width: 300px;
+        max-height: 50vh;
+    }
+    
+    .btn-primary {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Remove estilos antigos que conflitam */
+.profile-preview {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #1e3a8a;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== CORREÇÃO DAS CORES DOS CARDS ========== */
+
+/* Corrige a cor do texto nos cards de habilidades */
+.skill-item .card-title {
+    color: var(--secondary-color) !important;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* Corrige a cor do texto nos cards de projetos */
+.project-card .card-title {
+    color: var(--secondary-color) !important;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.project-card .card-text {
+    color: var(--secondary-color) !important;
+    opacity: 0.9;
+}
+
+/* Garante que todo o texto dentro dos cards fique na cor correta */
+.card,
+.card *:not(.btn) {
+    color: var(--secondary-color) !important;
+}
+
+/* Corrige especificamente os textos das habilidades */
+#skills-container .card-body,
+#projects-container .card-body {
+    color: var(--secondary-color) !important;
+}
+
+/* Corrige a cor dos ícones se necessário */
+.skill-icon {
+    color: var(--primary-color) !important;
+}
+
+/* Garante que os textos dos formulários também fiquem claros */
+.form-control {
+    color: var(--secondary-color) !important;
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+}
+
+.form-control::placeholder {
+    color: #94a3b8 !important;
+    opacity: 0.7;
+}
+
+/* Ícones de contato maiores */
+.social-link .fa-10x {
+    font-size: 8rem; /* Aproximadamente 10x o tamanho normal */
+    transition: all 0.3s ease;
+}
+
+.social-link:hover .fa-10x {
+    transform: scale(1.1);
+    color: var(--primary-color) !important;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .social-link .fa-10x {
+        font-size: 5rem;
+    }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Portfólio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Tela de Login (inicialmente visível) -->
+    <div id="login-screen" class="login-container">
+        <div class="login-card">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-center mb-4">Acesso Administrativo</h3>
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                    </form>
+                    <div id="login-error" class="alert alert-danger mt-3" style="display: none;">
+                        Credenciais inválidas!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo do Admin (inicialmente oculto) -->
+    <div id="admin-content" style="display: none;">
+        <!-- Navbar Admin -->
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Painel Administrativo</a>
+                <div>
+                    <a href="index.html" class="btn btn-outline-light me-2">Ver Site</a>
+                    <button class="btn btn-outline-warning" onclick="logout()">Sair</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#home-section" class="list-group-item list-group-item-action active">Seção Início</a>
+                        <a href="#about-section" class="list-group-item list-group-item-action">Seção Sobre</a>
+                        <a href="#skills-section" class="list-group-item list-group-item-action">Seção Habilidades</a>
+                        <a href="#trabalhos-section" class="list-group-item list-group-item-action">Seção Trabalhos</a>
+                        <a href="#contact-section" class="list-group-item list-group-item-action">Seção Contato</a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <!-- Seção Início -->
+                    <div id="home-section" class="admin-section">
+                        <h3>Seção Início</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="profile-image-input" class="form-label">Foto de Perfil</label>
+                                    <input class="form-control" type="file" id="profile-image-input" accept="image/*">
+                                    <div class="form-text">
+                                        <strong>Dica IMPORTANTE:</strong> Use imagens PNG com fundo transparente. 
+                                        A imagem será exibida em tamanho grande SEM CORTES e com transparência preservada.
+                                        Formato ideal: PNG transparente, mínimo 600x800 pixels.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="home-title" class="form-label">Título Principal</label>
+                                    <input type="text" class="form-control" id="home-title" value="Olá, eu sou Seu Nome">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="home-subtitle" class="form-label">Subtítulo</label>
+                                    <input type="text" class="form-control" id="home-subtitle" value="Desenvolvedor Full Stack">
+                                </div>
+                                <button class="btn btn-primary" onclick="saveHomeSection()">Salvar Alterações</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção Sobre -->
+                    <div id="about-section" class="admin-section" style="display: none;">
+                        <h3>Seção Sobre</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="about-text" class="form-label">Texto Sobre Mim</label>
+                                    <textarea class="form-control" id="about-text" rows="5">Sou um desenvolvedor apaixonado por tecnologia com experiência em criar soluções web inovadoras.</textarea>
+                                </div>
+                                <button class="btn btn-primary" onclick="saveAboutSection()">Salvar Alterações</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção Habilidades -->
+                    <div id="skills-section" class="admin-section" style="display: none;">
+                        <h3>Seção Habilidades</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="skills-list">
+                                    <!-- Lista de habilidades será carregada aqui -->
+                                </div>
+                                <button class="btn btn-success mt-3" onclick="addNewSkill()">Adicionar Nova Habilidade</button>
+                                <button class="btn btn-primary mt-3" onclick="saveSkillsSection()">Salvar Alterações</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção Trabalhos -->
+                    <div id="trabalhos-section" class="admin-section" style="display: none;">
+                        <h3>Seção Trabalhos</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="trabalhos-list">
+                                <!-- Lista de trabalhos será carregada aqui -->
+                                </div>
+                                <button class="btn btn-success mt-3" onclick="addNewTrabalho()">Adicionar Novo Trabalho</button>
+                                <button class="btn btn-primary mt-3" onclick="saveTrabalhosSection()">Salvar Alterações</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção Contato -->
+                    <div id="contact-section" class="admin-section" style="display: none;">
+                        <h3>Seção Contato</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="linkedin-url" class="form-label">URL do LinkedIn</label>
+                                    <input type="url" class="form-control" id="linkedin-url" value="https://linkedin.com/in/seu-perfil">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="whatsapp-url" class="form-label">URL do WhatsApp</label>
+                                    <input type="url" class="form-control" id="whatsapp-url" value="https://wa.me/5511997503821">
+                                    <div class="form-text">
+                                        Formato: https://wa.me/5511997503821 (incluindo código do país)
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="saveContactSection()">Salvar Alterações</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
