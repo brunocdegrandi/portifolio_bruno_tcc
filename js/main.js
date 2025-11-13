@@ -67,7 +67,7 @@ function updatePageContent() {
     console.log('🔄 Atualizando conteúdo da página...');
     
     updateHomeSection();
-    updateAboutSection();
+    updateAboutSection(); 
     renderSkills();
     renderTrabalhos();
     updateContactSection();
@@ -200,36 +200,26 @@ function renderTrabalhos() {
     console.log(`✅ ${trabalhos.length} trabalhos renderizados`);
 }
 
-// ATUALIZAR SEÇÃO CONTATO - VERSÃO CORRIGIDA
+// ATUALIZAR SEÇÃO CONTATO - VERSÃO SIMPLIFICADA E CORRIGIDA
 function updateContactSection() {
     const linkedinLink = document.getElementById('linkedin-link');
     const whatsappLink = document.getElementById('whatsapp-link');
     
-    console.log('🔗 Atualizando links de contato...');
-    console.log('Dados de contato:', portfolioData.contact);
-    
-    if (linkedinLink && portfolioData.contact && portfolioData.contact.linkedin) {
-        linkedinLink.href = portfolioData.contact.linkedin;
-        console.log('✅ LinkedIn atualizado:', portfolioData.contact.linkedin);
-    } else {
-        console.warn('❌ LinkedIn não encontrado ou inválido');
-        linkedinLink.href = "https://linkedin.com";
+    // LinkedIn
+    if (linkedinLink && portfolioData.contact) {
+        linkedinLink.href = portfolioData.contact.linkedin || "https://linkedin.com";
     }
     
-    if (whatsappLink && portfolioData.contact && portfolioData.contact.whatsapp) {
-        // Garantir que o link do WhatsApp está no formato correto
-        let whatsappUrl = portfolioData.contact.whatsapp;
-        if (!whatsappUrl.startsWith('https://wa.me/') && !whatsappUrl.startsWith('http://wa.me/')) {
+    // WhatsApp  
+    if (whatsappLink && portfolioData.contact) {
+        let whatsappUrl = portfolioData.contact.whatsapp || "https://wa.me/5511997503821";
+        if (!whatsappUrl.includes('wa.me/')) {
             whatsappUrl = 'https://wa.me/' + whatsappUrl.replace(/\D/g, '');
         }
         whatsappLink.href = whatsappUrl;
-        console.log('✅ WhatsApp atualizado:', whatsappUrl);
-    } else {
-        console.warn('❌ WhatsApp não encontrado ou inválido');
-        whatsappLink.href = "https://wa.me/5511999999999";
     }
     
-    console.log('✅ Seção Contato totalmente atualizada');
+    console.log('✅ Seção Contato atualizada');
 }
 
 // CONFIGURAÇÕES ADICIONAIS
