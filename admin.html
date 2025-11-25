@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Tela de Login (inicialmente visível) -->
     <div id="login-screen" class="login-container">
         <div class="login-card">
             <div class="card">
@@ -34,9 +33,9 @@
         </div>
     </div>
 
-    <!-- Conteúdo do Admin (inicialmente oculto) -->
+    
     <div id="admin-content" style="display: none;">
-        <!-- Navbar Admin -->
+        
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">Painel Administrativo</a>
@@ -59,7 +58,7 @@
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <!-- Seção Início -->
+                    
                     <div id="home-section" class="admin-section">
                         <h3>Seção Início</h3>
                         <div class="card">
@@ -86,7 +85,7 @@
                         </div>
                     </div>
 
-                    <!-- Seção Sobre -->
+                    
                     <div id="about-section" class="admin-section" style="display: none;">
                         <h3>Seção Sobre</h3>
                         <div class="card">
@@ -100,35 +99,31 @@
                         </div>
                     </div>
 
-                    <!-- Seção Habilidades -->
+                    
                     <div id="skills-section" class="admin-section" style="display: none;">
                         <h3>Seção Habilidades</h3>
                         <div class="card">
                             <div class="card-body">
-                                <div id="skills-list">
-                                    <!-- Lista de habilidades será carregada aqui -->
-                                </div>
+                                <div id="skills-list"></div>
                                 <button class="btn btn-success mt-3" onclick="addNewSkill()">Adicionar Nova Habilidade</button>
                                 <button class="btn btn-primary mt-3" onclick="saveSkillsSection()">Salvar Alterações</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Seção Trabalhos -->
+                    
                     <div id="trabalhos-section" class="admin-section" style="display: none;">
                         <h3>Seção Trabalhos</h3>
                         <div class="card">
                             <div class="card-body">
-                                <div id="trabalhos-list">
-                                <!-- Lista de trabalhos será carregada aqui -->
-                                </div>
+                                <div id="trabalhos-list"></div>
                                 <button class="btn btn-success mt-3" onclick="addNewTrabalho()">Adicionar Novo Trabalho</button>
                                 <button class="btn btn-primary mt-3" onclick="saveTrabalhosSection()">Salvar Alterações</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Seção Contato -->
+                    
                     <div id="contact-section" class="admin-section" style="display: none;">
                         <h3>Seção Contato</h3>
                         <div class="card">

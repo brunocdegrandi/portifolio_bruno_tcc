@@ -1,24 +1,24 @@
-// js/admin.js - VERSÃO CORRIGIDA
+
 let portfolioData = {};
 let isAuthenticated = false;
 
-// Credenciais de acesso
+// Credenciais de acesso fixas
 const ADMIN_CREDENTIALS = {
     username: "bruno",
     password: "100588"
 };
 
-// Função principal quando o documento carrega
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Admin carregando...');
     setupLoginForm();
     loadNavigation();
     
-    // Verificar se já está autenticado
+    
     checkAuthentication();
 });
 
-// CONFIGURAR LOGIN
+
 function setupLoginForm() {
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
@@ -36,7 +36,7 @@ function setupLoginForm() {
     }
 }
 
-// AUTENTICAÇÃO
+
 function authenticate(username, password) {
     return username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password;
 }
@@ -83,7 +83,7 @@ function requireAuth() {
     return true;
 }
 
-// CARREGAR DADOS - FUNÇÃO CORRIGIDA
+
 function loadPortfolioData() {
     console.log('📥 Carregando dados para o admin...');
     
@@ -135,7 +135,7 @@ function loadDefaultData() {
     updateAdminContent();
 }
 
-// ATUALIZAR CONTEÚDO DO ADMIN - FUNÇÃO CORRIGIDA
+
 function updateAdminContent() {
     console.log('🔄 Atualizando conteúdo do admin...');
     
@@ -144,46 +144,46 @@ function updateAdminContent() {
         return;
     }
     
-    // Preencher seção Home
+    
     if (portfolioData.home) {
         document.getElementById('home-title').value = portfolioData.home.title;
         document.getElementById('home-subtitle').value = portfolioData.home.subtitle;
     }
     
-    // Preencher seção About
+    
     if (portfolioData.about) {
         document.getElementById('about-text').value = portfolioData.about.text;
     }
     
-    // Preencher seção Contact
+    
     if (portfolioData.contact) {
         document.getElementById('linkedin-url').value = portfolioData.contact.linkedin || "https://linkedin.com/in/seu-perfil";
         document.getElementById('whatsapp-url').value = portfolioData.contact.whatsapp || "https://wa.me/5511997503821";
     }
     
-    // Renderizar habilidades
+    
     renderSkillsList();
     
-    // Renderizar trabalhos
+    
     renderTrabalhosList();
     
     console.log('✅ Admin atualizado com sucesso');
 }
 
-// NAVEGAÇÃO
+
 function loadNavigation() {
     const navItems = document.querySelectorAll('.list-group-item');
     navItems.forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Remover active de todos
+            
             navItems.forEach(nav => nav.classList.remove('active'));
             
-            // Adicionar active ao clicado
+            
             this.classList.add('active');
             
-            // Mostrar seção correspondente
+            
             const target = this.getAttribute('href').substring(1);
             showSection(target);
         });
@@ -191,19 +191,19 @@ function loadNavigation() {
 }
 
 function showSection(sectionId) {
-    // Ocultar todas as seções
+    
     document.querySelectorAll('.admin-section').forEach(section => {
         section.style.display = 'none';
     });
     
-    // Mostrar seção selecionada
+    
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
         targetSection.style.display = 'block';
     }
 }
 
-// SEÇÃO HOME
+
 function saveHomeSection() {
     if (!requireAuth()) return;
     
@@ -213,7 +213,7 @@ function saveHomeSection() {
         profileImage: portfolioData.home?.profileImage || "assets/images/profile.png"
     };
     
-    // Processar upload de imagem se existir
+    
     const imageInput = document.getElementById('profile-image-input');
     if (imageInput.files.length > 0) {
         const file = imageInput.files[0];
@@ -230,7 +230,7 @@ function saveHomeSection() {
     }
 }
 
-// SEÇÃO ABOUT
+
 function saveAboutSection() {
     if (!requireAuth()) return;
     
@@ -241,7 +241,7 @@ function saveAboutSection() {
     saveToLocalStorage();
 }
 
-// SEÇÃO HABILIDADES
+
 function renderSkillsList() {
     if (!requireAuth()) return;
     
@@ -315,7 +315,7 @@ function saveSkillsSection() {
     showSuccessMessage('Habilidades salvas com sucesso!');
 }
 
-// SEÇÃO TRABALHOS - FUNÇÕES CORRIGIDAS (SEM LINK E SEM CÓDIGO DA IMAGEM)
+
 function renderTrabalhosList() {
     if (!requireAuth()) return;
     
@@ -333,7 +333,7 @@ function renderTrabalhosList() {
         const trabalhoItem = document.createElement('div');
         trabalhoItem.className = 'list-item mb-4 p-3 border rounded';
         
-        // Determinar se a imagem é base64 ou URL normal
+        
         const isBase64Image = trabalho.image && trabalho.image.startsWith('data:image');
         const imageInfo = isBase64Image ? 'Imagem carregada (Base64)' : trabalho.image;
         
@@ -372,7 +372,7 @@ function addNewTrabalho() {
         title: "Novo Trabalho",
         description: "Descrição do trabalho realizado",
         image: "assets/images/trabalho-default.jpg"
-        // REMOVIDO: link: "#"
+        
     });
     
     renderTrabalhosList();
@@ -413,14 +413,14 @@ function saveTrabalhosSection() {
     showSuccessMessage('Trabalhos salvos com sucesso!');
 }
 
-// SEÇÃO CONTATO - VERSÃO CORRIGIDA
+
 function saveContactSection() {
     if (!requireAuth()) return;
     
     const linkedinUrl = document.getElementById('linkedin-url').value;
     const whatsappUrl = document.getElementById('whatsapp-url').value;
     
-    // Validar e formatar URLs
+    
     portfolioData.contact = {
         linkedin: linkedinUrl || "https://linkedin.com",
         whatsapp: whatsappUrl || "https://wa.me/5511997503821"
@@ -430,10 +430,9 @@ function saveContactSection() {
     showSuccessMessage('Links de contato salvos com sucesso!');
 }
 
-// SALVAR DADOS - VERSÃO MELHORADA
+
 function saveToLocalStorage() {
     try {
-        // Garante que todos os dados estejam consistentes
         if (!portfolioData.skills) portfolioData.skills = [];
         if (!portfolioData.trabalhos) portfolioData.trabalhos = [];
         if (!portfolioData.home) portfolioData.home = {};
@@ -455,10 +454,10 @@ function saveToLocalStorage() {
 }
 
 function showSuccessMessage(message) {
-    alert(message); // Você pode substituir por um toast mais elegante
+    alert(message); 
 }
 
-// Inicializar mostrando a primeira seção
+
 setTimeout(() => {
     showSection('home-section');
 }, 100);

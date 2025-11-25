@@ -1,7 +1,6 @@
-// js/main.js - VERSÃO COMPLETAMENTE CORRIGIDA
 let portfolioData = {};
 
-// Função principal quando o documento carrega
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Site principal carregando...');
     loadPortfolioData();
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-// CARREGAR DADOS
+
 function loadPortfolioData() {
     console.log('📥 Carregando dados para o site...');
     
@@ -62,7 +61,7 @@ function loadDefaultData() {
     updatePageContent();
 }
 
-// ATUALIZAR TODO O CONTEÚDO DA PÁGINA
+
 function updatePageContent() {
     console.log('🔄 Atualizando conteúdo da página...');
     
@@ -73,7 +72,7 @@ function updatePageContent() {
     updateContactSection();
 }
 
-// ATUALIZAR SEÇÃO INÍCIO
+
 function updateHomeSection() {
     console.log('🏠 Atualizando seção Início...');
     
@@ -116,7 +115,7 @@ function updateHomeSection() {
     console.log('✅ Seção Início totalmente atualizada');
 }
 
-// ATUALIZAR SEÇÃO SOBRE
+
 function updateAboutSection() {
     const aboutText = document.getElementById('about-text');
     
@@ -126,7 +125,7 @@ function updateAboutSection() {
     }
 }
 
-// RENDERIZAR HABILIDADES
+
 function renderSkills() {
     const skillsContainer = document.getElementById('skills-container');
     
@@ -161,7 +160,7 @@ function renderSkills() {
     console.log(`✅ ${portfolioData.skills.length} habilidades renderizadas`);
 }
 
-// RENDERIZAR TRABALHOS - FUNÇÃO COMPLETA E CORRIGIDA
+
 function renderTrabalhos() {
     const container = document.getElementById('trabalhos-container');
     
@@ -172,7 +171,7 @@ function renderTrabalhos() {
     
     container.innerHTML = '';
     
-    // 'trabalhos'
+    
     const trabalhos = portfolioData.trabalhos || portfolioData.projects || [];
     
     if (!trabalhos || trabalhos.length === 0) {
@@ -200,17 +199,17 @@ function renderTrabalhos() {
     console.log(`✅ ${trabalhos.length} trabalhos renderizados`);
 }
 
-// ATUALIZAR SEÇÃO CONTATO - VERSÃO SIMPLIFICADA E CORRIGIDA
+
 function updateContactSection() {
     const linkedinLink = document.getElementById('linkedin-link');
     const whatsappLink = document.getElementById('whatsapp-link');
     
-    // LinkedIn
+    
     if (linkedinLink && portfolioData.contact) {
         linkedinLink.href = portfolioData.contact.linkedin || "https://linkedin.com";
     }
     
-    // WhatsApp  
+     
     if (whatsappLink && portfolioData.contact) {
         let whatsappUrl = portfolioData.contact.whatsapp || "https://wa.me/5511997503821";
         if (!whatsappUrl.includes('wa.me/')) {
@@ -222,7 +221,7 @@ function updateContactSection() {
     console.log('✅ Seção Contato atualizada');
 }
 
-// CONFIGURAÇÕES ADICIONAIS
+
 function setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -254,7 +253,7 @@ function setupNavbarEffect() {
 }
 
 
-// ATUALIZAÇÃO AUTOMÁTICA
+
 function forceReloadContent() {
     console.log('🔄 Forçando atualização do conteúdo...');
     loadPortfolioData();

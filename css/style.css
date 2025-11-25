@@ -1,8 +1,9 @@
 :root {
+    /*Escolhi as cores que mais gosto para compoor este site*/
     --primary-color: #1e3a8a; /* Azul marinho */
     --secondary-color: #c0c0c0; /* Prata */
     --dark-color: #0f172a; /* Preto azulado */
-    --light-color: #f8fafc;
+    --light-color: #f8fafc; /* Tom de Branco */
 }
 
 body {
@@ -12,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar */
+
 .navbar {
     background-color: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(10px);
@@ -33,7 +34,7 @@ body {
     color: var(--primary-color) !important;
 }
 
-/* Seções */
+
 section {
     padding: 100px 0;
 }
@@ -62,14 +63,14 @@ section {
     background-color: var(--primary-color);
 }
 
-/* Imagem de perfil - ESTILO RETANGULAR GRANDE COMO REFERÊNCIA */
+/* Imagem de perfil pensando em algo simples e mostrando uma foto mais proficional (neste caso fiz um com IA, pois o site ainda não é o definitivo) */
 .profile-img {
     width: 100%;
     max-width: 500px;
     height: auto;
     object-fit: cover;
-    object-position: center 25%; /* Foco no busto/rosto */
-    border-radius: 10px; /* Bordas levemente arredondadas */
+    object-position: center 25%; 
+    border-radius: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
@@ -79,7 +80,7 @@ section {
     box-shadow: 0 25px 50px rgba(30, 58, 138, 0.2);
 }
 
-/* Preview no admin - também atualizar para retangular */
+
 .profile-preview {
     width: 200px;
     height: 150px;
@@ -90,12 +91,12 @@ section {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Ajuste no layout da seção inicial para melhor espaçamento */
+
 #home .row {
     min-height: 80vh;
 }
 
-/* Ajuste responsivo para mobile */
+
 @media (max-width: 768px) {
     .profile-img {
         max-width: 300px;
@@ -108,18 +109,18 @@ section {
     }
 }
 
-/* Preview no admin */
+
 .profile-preview {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    object-position: center 25%; /* Mesmo ajuste do preview */
+    object-position: center 25%; 
     border: 3px solid #1e3a8a;
     border-radius: 50%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Cards */
+
 .card {
     background-color: #1e293b;
     border: none;
@@ -137,7 +138,7 @@ section {
     padding: 2rem;
 }
 
-/* Botões */
+
 .btn-primary {
     background-color: var(--primary-color);
     border: none;
@@ -153,7 +154,7 @@ section {
     box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
 }
 
-/* Habilidades */
+
 .skill-item {
     text-align: center;
     padding: 20px;
@@ -165,7 +166,7 @@ section {
     margin-bottom: 15px;
 }
 
-/* TRABALHOS - substitui projetos */
+
 .trabalho-card {
     overflow: hidden;
 }
@@ -180,7 +181,7 @@ section {
     transform: scale(1.05);
 }
 
-/* Corrige a cor do texto nos cards de trabalhos */
+
 .trabalho-card .card-title {
     color: var(--secondary-color) !important;
     font-size: 1.4rem;
@@ -192,12 +193,12 @@ section {
     opacity: 0.9;
 }
 
-/* Corrige especificamente os textos dos trabalhos */
+
 #trabalhos-container .card-body {
     color: var(--secondary-color) !important;
 }
 
-/* Contato */
+
 .social-link {
     color: var(--secondary-color);
     margin: 0 15px;
@@ -208,13 +209,13 @@ section {
     color: var(--primary-color);
 }
 
-/* Footer */
+
 footer {
     background-color: #0f172a;
     border-top: 1px solid #1e293b;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
     .profile-img {
         width: 200px;
@@ -227,7 +228,7 @@ footer {
     }
 }
 
-/* Container para a imagem com efeito sutil */
+
 .image-container {
     position: relative;
     display: inline-block;
@@ -252,7 +253,7 @@ footer {
     transform: translateY(-5px);
 }
 
-/* ========== SEÇÃO INÍCIO - LAYOUT EXATO COMO REFERÊNCIA ========== */
+
 #home {
     background: linear-gradient(135deg, var(--dark-color) 0%, #1e293b 100%);
     min-height: 100vh;
@@ -272,7 +273,7 @@ footer {
     min-height: 80vh;
 }
 
-/* Conteúdo textual */
+
 .home-content {
     padding-right: 3rem;
 }
@@ -300,7 +301,7 @@ footer {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Container da imagem - LAYOUT GRANDE E TRANSPARENTE */
+
 .image-container {
     position: relative;
     display: flex;
@@ -309,7 +310,7 @@ footer {
     height: 100%;
 }
 
-/* Imagem de perfil - GRANDE, TRANSPARENTE E SEM CORTES */
+
 .profile-img {
     width: auto;
     max-width: 600px;
@@ -320,7 +321,7 @@ footer {
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
     transition: all 0.4s ease;
     border-radius: 0;
-    background: transparent !important; /* FORÇA FUNDO TRANSPARENTE */
+    background: transparent !important; 
 }
 
 .profile-img:hover {
@@ -328,12 +329,12 @@ footer {
     filter: drop-shadow(0 25px 50px rgba(30, 58, 138, 0.2));
 }
 
-/* Remove qualquer efeito que possa criar fundo */
+
 .image-container::before {
-    display: none; /* Remove o efeito anterior */
+    display: none;
 }
 
-/* Efeito sutil de brilho atrás da imagem */
+
 .image-glow {
     position: absolute;
     width: 100%;
@@ -359,7 +360,7 @@ footer {
     }
 }
 
-/* Botão com destaque */
+
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-color), #2563eb);
     border: none;
@@ -377,7 +378,7 @@ footer {
     background: linear-gradient(135deg, #2563eb, var(--primary-color));
 }
 
-/* ========== RESPONSIVIDADE ========== */
+
 @media (max-width: 1200px) {
     #home h1 {
         font-size: 3rem;
@@ -430,7 +431,7 @@ footer {
     }
 }
 
-/* Remove estilos antigos que conflitam */
+
 .profile-preview {
     width: 200px;
     height: 150px;
@@ -440,9 +441,7 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* ========== CORREÇÃO DAS CORES DOS CARDS ========== */
 
-/* Corrige a cor do texto nos cards de habilidades */
 .skill-item .card-title {
     color: var(--secondary-color) !important;
     font-size: 1.3rem;
@@ -450,7 +449,7 @@ footer {
     margin-bottom: 0;
 }
 
-/* Corrige a cor do texto nos cards de projetos */
+
 .project-card .card-title {
     color: var(--secondary-color) !important;
     font-size: 1.4rem;
@@ -462,24 +461,24 @@ footer {
     opacity: 0.9;
 }
 
-/* Garante que todo o texto dentro dos cards fique na cor correta */
+
 .card,
 .card *:not(.btn) {
     color: var(--secondary-color) !important;
 }
 
-/* Corrige especificamente os textos das habilidades */
+
 #skills-container .card-body,
 #projects-container .card-body {
     color: var(--secondary-color) !important;
 }
 
-/* Corrige a cor dos ícones se necessário */
+
 .skill-icon {
     color: var(--primary-color) !important;
 }
 
-/* Garante que os textos dos formulários também fiquem claros */
+
 .form-control {
     color: var(--secondary-color) !important;
     background-color: #1e293b !important;
@@ -491,9 +490,9 @@ footer {
     opacity: 0.7;
 }
 
-/* Ícones de contato maiores */
+
 .social-link .fa-10x {
-    font-size: 8rem; /* Aproximadamente 10x o tamanho normal */
+    font-size: 8rem; 
     transition: all 0.3s ease;
 }
 
@@ -502,7 +501,7 @@ footer {
     color: var(--primary-color) !important;
 }
 
-/* Ajuste para mobile */
+
 @media (max-width: 768px) {
     .social-link .fa-10x {
         font-size: 5rem;
