@@ -22,3 +22,8 @@ Este é um projeto de portfólio pessoal desenvolvido com HTML, CSS, Bootstrap e
    - Alterar a foto de perfil
    - Modificar textos (título, subtítulo, sobre, etc.)
    - Adicionar/rem
+
+## Informações
+
+O site faz todo o processo de CRUD, mas não salva efetivamente em um banco de dados, no momento ele so salva no cache do navegador.
+Proximo passo será inserir um banco de dados e um servidor onde irei hospedar tudo.
