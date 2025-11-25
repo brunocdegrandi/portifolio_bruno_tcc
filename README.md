@@ -27,3 +27,6 @@ Este é um projeto de portfólio pessoal desenvolvido com HTML, CSS, Bootstrap e
 
 O site faz todo o processo de CRUD, mas não salva efetivamente em um banco de dados, no momento ele so salva no cache do navegador.
 Proximo passo será inserir um banco de dados e um servidor onde irei hospedar tudo.
+Não sou designer então não foquei nisso, mas tentei fazer o melhor que pude.
+Não acho importante enviar e-mail, então coloquei o link do linkedin e do meu whatsapp.
+Todo o resto acredito que atenda as solicitaçãos do enunciado (HTML, CSS e Bootstrap) porem para funcionar como eu queria usei JavaScript também.
